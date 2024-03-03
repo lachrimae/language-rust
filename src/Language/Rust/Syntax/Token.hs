@@ -123,6 +123,7 @@ data Delim
   = Paren   -- ^ round parenthesis: @(@ or @)@
   | Bracket -- ^ square bracket: @[@ or @]@
   | Brace   -- ^ curly brace: @{@ or @}@
+  | Angle   -- ^ angle bracket: @<@ or @>@
   | NoDelim -- ^ empty delimiter
   deriving (Eq, Ord, Enum, Bounded, Show, Data, Typeable, Generic, NFData)
 
@@ -339,10 +340,12 @@ instance Show Token where
   show (OpenDelim Paren) = "("
   show (OpenDelim Bracket) = "["
   show (OpenDelim Brace) = "{"
+  show (OpenDelim Angle) = "<"
   show (OpenDelim NoDelim) = ""
   show (CloseDelim Paren) = ")"
   show (CloseDelim Bracket) = "]"
   show (CloseDelim Brace) = "}"
+  show (CloseDelim Angle) = ">"
   show (CloseDelim NoDelim) = ""
   -- Literals
   show (LiteralTok (ByteTok n) s) = "b'" ++ n ++ "'" ++ fromMaybe "" s

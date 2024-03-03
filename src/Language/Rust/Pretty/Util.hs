@@ -143,10 +143,11 @@ block delim p s as xs = group' (lDel # PP.vsep (as' ++ ys) # rDel)
                   Paren ->   ("(", ")")
                   Bracket -> ("[", "]")
                   Brace ->   ("{", "}")
+                  Angle ->   ("<", ">")
                   NoDelim -> (mempty, mempty)
 
   -- method of contenating delimiters with the rest of the body
-  (#) = case delim of { Paren -> (<##>); _ -> (<#>) }
+  (#) = case delim of { Angle -> (<##>); Paren -> (<##>); _ -> (<#>) }
 
   -- attributes
   as' = case as of
