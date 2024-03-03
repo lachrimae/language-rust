@@ -25,8 +25,8 @@ import System.Exit (exitSuccess)
 import Data.Time.Clock (utctDay, getCurrentTime)
 import Data.Time.Calendar (fromGregorian, showGregorian, diffDays)
 
-import qualified Data.Text.Prettyprint.Doc as PP
-import Data.Text.Prettyprint.Doc.Render.Text (renderIO)
+import qualified Prettyprinter as PP
+import Prettyprinter.Render.Text (renderIO)
 
 import Test.Framework (defaultMain)
 import Test.Framework.Providers.API
@@ -34,7 +34,7 @@ import Test.Framework.Providers.API
 main :: IO ()
 main = do
   -- Check last time `rustc` version was bumped
-  let lastDay = fromGregorian 2018 4 19
+  let lastDay = fromGregorian 2024 3 3
   today <- utctDay <$> getCurrentTime
   when (diffDays today lastDay > 32) $
     putStrLn $ "\x1b[33m" ++ "\nThe version of `rustc' the tests will try to use is older than 1 month" ++ "\x1b[0m"

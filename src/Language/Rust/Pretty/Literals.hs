@@ -19,10 +19,10 @@ module Language.Rust.Pretty.Literals (
 import Language.Rust.Syntax.AST
 import Language.Rust.Pretty.Util
 
-import Data.Text.Prettyprint.Doc ( hcat, annotate, (<>), Doc, pretty, group, hardline, flatAlt )
+import Prettyprinter ( hcat, annotate, Doc, pretty, group, hardline, flatAlt )
 
-import Data.Char                 ( intToDigit, ord, chr )
-import Data.Word                 ( Word8 )
+import Data.Char     ( intToDigit, ord, chr )
+import Data.Word     ( Word8 )
 
 -- | Print a literal (@print_literal@)
 printLit :: Lit a -> Doc a

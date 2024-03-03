@@ -75,13 +75,13 @@ import Language.Rust.Syntax.Token
 import Language.Rust.Pretty.Internal
 import Language.Rust.Pretty.Resolve
 
-import System.IO                             ( Handle )
-import Data.Typeable                         ( Typeable )
-import Data.Text.Prettyprint.Doc.Render.Text ( renderIO )
-import Data.Text.Prettyprint.Doc             ( Doc )
-import qualified Data.Text.Prettyprint.Doc as PP
+import System.IO                 ( Handle )
+import Data.Typeable             ( Typeable )
+import Prettyprinter.Render.Text ( renderIO )
+import Prettyprinter             hiding ( Pretty, pretty )
+import qualified Prettyprinter   as PP
 
-import Control.Exception                     ( throw )
+import Control.Exception         ( throw )
 
 -- | Resolve (see the 'Resolve' typeclass) and pretty print something.
 --

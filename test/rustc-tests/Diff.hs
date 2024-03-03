@@ -12,7 +12,6 @@ import Control.Monad (when, unless)
 import Text.Read (readMaybe)
 import Data.String (fromString)
 import Data.Maybe (fromMaybe, isNothing)
-import Data.Semigroup ((<>))
 import qualified Data.Text as T
 import qualified Data.Vector as V
 
